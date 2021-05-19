@@ -1,13 +1,14 @@
 pipeline {
-     tools {
-    maven 'mvn'
-  }
-    agent any
-    stages {
-        stage('Build') { 
+     tools { maven 'mvn'  }
+     agent any
+     stages {
+      stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
-            }
+                sh 'mvn -B -DskipTests clean package' }
+      }
+      stage('deploy')
+             {
+                  
         }
     }
 }
