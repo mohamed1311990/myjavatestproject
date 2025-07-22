@@ -28,6 +28,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: List workspace files
+        run: ls -R
   
       - name: Build and push
         uses: docker/build-push-action@v6
